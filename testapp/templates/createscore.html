@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}点数登録{% endblock %}
+
+{% block contents %}
+<h1>点数を入力してください！</h1>
+<form method="post">
+    {% csrf_token %}
+    <tr>
+        <th>科目名</th>
+        <td>{{ form.category }}</td>
+    </tr>
+
+    <tr>
+        <th>点数</th>
+        <td>{{ form.score }}</td>
+    </tr>
+
+    {{ forms.as_p }}
+    <button type="submit">登録</button>
+</form>
+{% endblock %}

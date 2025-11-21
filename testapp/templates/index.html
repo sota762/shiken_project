@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block contents %}
+        <!-- Content section 1-->
+        <section id="scroll">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="p-5">
+                            <a href="{% url 'testapp:score_list' %}">
+                                <img class="img-fluid rounded-circle" src="{% static 'assets/img/450.jpg' %}" alt="..." />
+                            </a>
+                        </div>
+                            
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="p-5">
+                            <h2 class="display-4">成績一覧</h2>
+                            <p>ユーザーの点数一覧
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Content section 2-->
+        <section>
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="p-5">
+                            <a href="{% url 'testapp:createscore' %}" >
+                                <img class="img-fluid rounded-circle" src="{% static 'assets/img/02.jpg' %}" alt="..." />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-5">
+                            <h2 class="display-4">成績登録</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Content section 3-->
+        <section>
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="p-5">
+                            <a href="{% url 'testapp:contact' %}">
+                                <img class="img-fluid rounded-circle" src="{% static 'assets/img/03.jpg' %}" alt="..." />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="p-5">
+                            <h2 class="display-4">お問い合わせ</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}
