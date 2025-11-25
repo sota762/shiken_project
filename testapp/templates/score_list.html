@@ -34,7 +34,11 @@
       >成績登録
       </a>
     </h5>
-    <h1>{{ scores.0.get_category_display }} の成績一覧</h1>
+    {% if scores %}
+    <h1>{{ selected_category_label }} の成績一覧</h1>
+    {% else %}
+    <h1>存在しません</h1>
+    {% endif %}
 
       <table class="table table-striped table-hover table-bordered">
         <thead>

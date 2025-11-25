@@ -52,12 +52,21 @@ class ScoreListView(LoginRequiredMixin,ListView):
             )
             except ValueError:
                 pass
+
+        selected_category=self.request.GET.get('category')
+        if selected_category:
+            queryset=queryset.filter(category=selected_category)
+
         return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = ScoreCategory.CATEGORY  # プルダウン用科目リスト
-        context['selected_category'] = self.request.GET.get('category', '')
+        selected_category=self.request.GET.get('category', '')
+        context['selected_category']=selected_category
+
+        category_jp=dict(ScoreCategory.CATEGORY)
+        context['selected_category_label']=category_jp.get(selected_category,"すべての科目")
         return context
     
 class ScoreCreateView(LoginRequiredMixin,CreateView):
