@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-dcmb@43jnn=ec7*6@%9d+dqh%f+$r#5s1*$8rxs5u_906mqozt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['13.222.8.227','ec2-13-222-8-227.compute-1.amazonaws.com','127.0.0.1','localhost','*']
 
 
 # Application definition
@@ -119,6 +119,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
+
 STATICFILES_DIR=(os.path.join(BASE_DIR,'static'),)
 
 # Default primary key field type
@@ -141,3 +143,8 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 LOGIN_URL='/accounts2/login'
 LOGIN_REDIRECT_URL='/'
 LOGOUT_REDIRECT_URL='/'
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://13.222.8.227',
+    'http://ec2-13-222-8-227.compute-1.amazonaws.com',
+]

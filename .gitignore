@@ -1,0 +1,24 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Django migrations
+*/migrations/*.pyc
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# SQLite database
+db.sqlite3
+
+# Virtual environment
+venv/
+
+# Static files (collectstaticで生成される)
+staticfiles/
+
+# IDE/Editor files
+.vscode/
+*.swp
+*.pyc
+__pycache__/
+db.sqlite3
